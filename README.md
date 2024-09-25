@@ -29,3 +29,4 @@ This command creates a SSH key pair with a private and public key. The private k
 
 SSH KEYS: https://www.cloudflare.com/learning/access-management/what-is-ssh/
 
+SSH Key GITLAB CLass: https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md
