@@ -20,7 +20,26 @@ To create a new SSH key pair, run the below command
 `ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"`
 ```
 This command creates a SSH key pair with a private and public key. The private key will be saved as "do-key" and the public key will be saved as "do-key.pub". The command will also associate your email with the key as a comment.
+
+## Copy the contents of your SSH Public Key
+For the next step, you will need to copy the contents of your SSH Public Key
+Run the below command in your terminal
+
+In PowerShell:
+```powershell
+`Get-Content C:\Users\your-user-name\.ssh\do-key.pub | Set-Clipboard`
+```
+For MacOS users:
+``` 
+pbcopy < ~/.ssh/do-key.pub
+```
+## Adding SSH Public Key to your DigitalOcean account
+1. Log into your DigitalOcean account
+2. Navigate to Settings > Security > SSH Keys
+3. Click on add SSH Key
+4. Paste the contents of your public key into the Public Key box and name it. 
 ## Adding a Custom Arch Linux image
+1. Download a Arch linux image from 
 
 ## Creating a droplet running Arch Linux
 
