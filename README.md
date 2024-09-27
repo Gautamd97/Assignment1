@@ -42,7 +42,7 @@ pbcopy < ~/.ssh/do-key.pub
 1. Download a Arch linux image from 
 ## Creating a droplet running Arch Linux
 1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
-![[Pasted image 20240927152218.png]]
+![[CreateDroplet.png]]
 3. You will be redirected to a "Create Droplets" page where you must create your droplet.
 4. In this tutorial, we will be choosing the options as shown below and in the screenshots
 5. Select the San Francisco region and SFO3 Datacenter.
