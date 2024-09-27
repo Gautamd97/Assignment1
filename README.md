@@ -40,7 +40,7 @@ pbcopy < ~/.ssh/do-key.pub
 4. Paste the contents of your public key into the Public Key box and name it. 
 ## Adding a Custom Arch Linux image
 1. Download a Arch linux image from 
-2. Please work
+2. Please work AHHHHHH
 ## Creating a droplet running Arch Linux
 1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
 ![](../Images/CreateDroplet.png)
