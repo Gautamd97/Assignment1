@@ -46,7 +46,6 @@ pbcopy < ~/.ssh/do-key.pub
 3. You will be redirected to a "Create Droplets" page where you must create your droplet.
 4. In this tutorial, we will be choosing the options as shown below and in the screenshots
 5. Select the San Francisco region and SFO3 Datacenter.
-![[Pasted image 20240927152346.png]]
 7. For images, click on custom image, then add image then upload the Arch Linux image that you downloaded earlier in the tutorial.
 8. For this tutorial, we will choose the Basic plan for the droplet type and the cheapest option under the Premium AMD CPU option.
 9. For the authentication method, select SSH Key and choose the key that was created earlier.
