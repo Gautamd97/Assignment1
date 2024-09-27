@@ -41,14 +41,15 @@ pbcopy < ~/.ssh/do-key.pub
 ## Adding a Custom Arch Linux image
 1. Download a Arch linux image from 
 ## Creating a droplet running Arch Linux
-1. Click on the green "Create" dropdow found on the upper right corner on DigitalOcean and click on "Droplet".
-2. You will be redirected to a "Create Droplets" page where you must create your droplet.
-3. In this tutorial, we will be choosing the options as shown below and in the screenshots
-4. Select the San Francisco region and SFO3 Datacenter.
-5. For images, click on custom image and select the image that was uploaded earlier in the tutorial.
-6. For this tutorial, we will choose the Basic plan for the droplet type and the cheapest option under the Premium AMD CPU option.
-7. For the authentication method, select SSH Key and choose the key that was created earlier.
-8. Choose 1 droplet for the quantity and give the droplet a hostname.
+1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
+![[Pasted image 20240927152218.png]]
+3. You will be redirected to a "Create Droplets" page where you must create your droplet.
+4. In this tutorial, we will be choosing the options as shown below and in the screenshots
+5. Select the San Francisco region and SFO3 Datacenter.
+6. For images, click on custom image and select the image that was uploaded earlier in the tutorial.
+7. For this tutorial, we will choose the Basic plan for the droplet type and the cheapest option under the Premium AMD CPU option.
+8. For the authentication method, select SSH Key and choose the key that was created earlier.
+9. Choose 1 droplet for the quantity and give the droplet a hostname.
 
 ## Connecting to your droplet
 ## References
