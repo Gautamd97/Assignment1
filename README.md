@@ -36,9 +36,9 @@ pbcopy < ~/.ssh/do-key.pub
 1. Log into your DigitalOcean account
 2. Navigate to Settings > Security > SSH Keys
 3. Click on add SSH Key
-![](../SSHKey.png)
+![](Images/SSHKey.png)
 5. Paste the contents of your public key into the Public Key box and name it. 
-![](../SSHKey2%201.png)
+![](Images/SSHKey2%201.png)
 ## Custom Arch Linux image
 1. Download a Arch linux image from [Arch Linux](https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) website.
 2. Go to the latest images folder
