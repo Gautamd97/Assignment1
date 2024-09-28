@@ -118,3 +118,7 @@ Congratulations! You have successfully generated an SSH Key, created an Arch Lin
 **CIT 2420 Class.** (n.d.). SSH Key. Retrieved from GitLab: [https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md](https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md)
 
 CIT 2420 Class. (n.d.). _Week three notes_. GitLab. Retrieved September 27, 2024, from [https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md](https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md)
+
+DigitalOcean. _How To Use Cloud-Config for Your Initial Server Setup_. [https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup](https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup). Accessed September 27, 2024.
+
+Cloud-init. _Cloud-init Documentation_. [https://docs.cloud-init.io/en/latest/index.html](https://docs.cloud-init.io/en/latest/index.html). Accessed September 27, 2024.
