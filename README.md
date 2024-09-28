@@ -3,19 +3,21 @@
 ## Table of Contents
 1. Introduction
 2. SSH Keys
-3. Steps to generate an SSH Key
-4. Copy the Contents of your SSH Public Key
-5. Adding SSH Public Key to your DigitalOcean account
-6. Custom Arch Linux Image
-7. Creating a Droplet running Arch Linux
+3. Custom Arch Linux Image
+4. Creating a Droplet running Arch Linux
+5. Configuring Cloud-Init
+6. Connecting to your Droplet
 
 ## Introduction
 In this tutorial, you will learn how to create a remote server using DigitalOcean. This tutorial will cover:
 - Generating SSH Keys
 - Adding a custom Arch Linux image
 - Creating a Droplet running Arch Linux
+- Configuring Cloud-Init
 - Connecting to your droplet from your local machine using SSH
+
 ## SSH Keys
+
 ### What are SSH Keys
 SSH (Secure Shell) keys are a pair of cryptographic keys that provide a secure connection between a device and server over an unsecured network. SSH uses encryption to scramble data which makes it more secure than a normal password.
 ### Steps to generate an SSH Key
@@ -29,7 +31,7 @@ mkdir -p ~/.ssh
 ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"
 ```
 This command generates an SSH key pair with a private and public key. The private key will be saved as "do-key" and the public key will be saved as "do-key.pub". The command will also associate your email with the key as a comment.
-## Copy the contents of Your SSH Public Key
+### Copy the contents of Your SSH Public Key
 For the next step, you will need to copy the contents of your SSH Public Key
 Run one of the following commands to copy your public SSH Key to the clipboard based on your operating system:
 
@@ -45,13 +47,14 @@ For Linux:
 ``` bash
 cat ~/.ssh/do-key.pub | xclip -sel clip
 ```
-## Adding SSH Public Key to your DigitalOcean account
+### Adding SSH Public Key to your DigitalOcean account
 1. Log into your DigitalOcean account
 2. Navigate to Settings > Security > SSH Keys
 3. Click on add SSH Key
 ![](Images/SSHKey.png)
 4. Paste the contents of your public key into the Public Key box and name it. 
 ![](Images/SSHKey2%201.png)
+
 ## Custom Arch Linux image
 1. Download an Arch linux image from [Arch Linux](https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) website.
 2. Go to the latest images folder
@@ -70,7 +73,32 @@ We are using .qcow as it is supported by DigitalOcean for custom images and can 
 6. For this tutorial, we will choose the Basic plan for the droplet type and the cheapest option under the Premium AMD CPU option.
 7. For the authentication method, select SSH Key and choose the key that was created earlier.
 8. Choose 1 droplet for the quantity and give the droplet a hostname.
+## Configuring Cloud-Init
+Cloud-Init helps automate the initial configuration of cloud instances. For this tutorial, we are making just 1 server so it is not required, but if we were to make multiple servers, cloud-init will be very helpful.
 
+1. Create a YAML file with this configuration:
+```yaml
+users:
+  - name: yourname
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519 ..your-public-key..
+packages:
+  - ripgrep
+  - rsync
+  - neovim
+  - fd
+  - less
+  - man-db
+  - bash-completion
+  - tmux
+disable_root: true
+```
+2. While creating the droplet, scroll down to the bottom and select "Advanced Options"
+3. Select "Add Initialization Scripts"
+4. Copy the above contents and paste it into the text box that appears after you select "Add Initialization Scripts"
+![](Images/Cloud-Init.png)
 ## Connecting to your droplet
 1. Once the droplet is created, go to the projects section and hover over the IP address of the droplet.
 ![](Images/IP.png)
@@ -86,3 +114,5 @@ Congratulations! You have successfully generated an SSH Key, created an Arch Lin
 **Cloudflare.** (n.d.). What is SSH? Retrieved September 24, 2024, from [https://www.cloudflare.com/learning/access-management/what-is-ssh/](https://www.cloudflare.com/learning/access-management/what-is-ssh/)
 
 **CIT 2420 Class.** (n.d.). SSH Key. Retrieved from GitLab: [https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md](https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md)
+
+CIT 2420 Class. (n.d.). _Week three notes_. GitLab. Retrieved September 27, 2024, from [https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md](https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md)
