@@ -7,6 +7,8 @@
 4. Creating a Droplet running Arch Linux
 5. Configuring Cloud-Init
 6. Connecting to your Droplet
+7. Conclusion
+8. References
 
 ## Introduction
 In this tutorial, you will learn how to create a remote server using DigitalOcean. This tutorial will cover:
