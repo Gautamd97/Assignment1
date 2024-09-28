@@ -43,7 +43,7 @@ pbcopy < ~/.ssh/do-key.pub
 2. PLEASE WORKKKKKKKK
 ## Creating a droplet running Arch Linux
 1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
-![](../Assets/CreateDroplet.png)
+![name](../Assets/CreateDroplet.png)
 
 3. You will be redirected to a "Create Droplets" page where you must create your droplet.
 4. In this tutorial, we will be choosing the options as shown below and in the screenshots
