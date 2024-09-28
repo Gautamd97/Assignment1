@@ -3,9 +3,9 @@
 ## Table of Contents
 1. Introduction
 2. SSH Keys
-3. Steps to create an SSH Key
+3. Steps to generate an SSH Key
 4. Copy the Contents of your SSH Public Key
-5. Adding SSH Public Key to your digital ocean account
+5. Adding SSH Public Key to your DigitalOcean account
 6. Custom Arch Linux Image
 7. Creating a Droplet running Arch Linux
 
@@ -18,7 +18,7 @@ In this tutorial, you will learn how to create a remote server using DigitalOcea
 ## SSH Keys
 ### What are SSH Keys
 SSH (Secure Shell) keys are a pair of cryptographic keys that provide a secure connection between a device and server over an unsecured network. SSH uses encryption to scramble data which makes it more secure than a normal password.
-### Steps to create an SSH Key
+### Steps to generate an SSH Key
 1. Make sure your device has ssh-keygen installed.
 2. If the .ssh directory doesn't exist, create it using this command
 ```powershell
@@ -28,10 +28,10 @@ mkdir -p ~/.ssh
 ```powershell
 ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"
 ```
-This command creates a SSH key pair with a private and public key. The private key will be saved as "do-key" and the public key will be saved as "do-key.pub". The command will also associate your email with the key as a comment.
+This command generates an SSH key pair with a private and public key. The private key will be saved as "do-key" and the public key will be saved as "do-key.pub". The command will also associate your email with the key as a comment.
 ## Copy the contents of Your SSH Public Key
 For the next step, you will need to copy the contents of your SSH Public Key
-Run the below command in your terminal
+Run one of the following commands to copy your public SSH Key to the clipboard based on your operating system:
 
 In PowerShell:
 ```powershell
@@ -53,11 +53,12 @@ cat ~/.ssh/do-key.pub | xclip -sel clip
 4. Paste the contents of your public key into the Public Key box and name it. 
 ![](Images/SSHKey2%201.png)
 ## Custom Arch Linux image
-1. Download a Arch linux image from [Arch Linux](https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) website.
+1. Download an Arch linux image from [Arch Linux](https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) website.
 2. Go to the latest images folder
 ![](Images/imagesArchLinux.png)
-3. Select the .qcow file as shown below and download
+3. Select the .qcow file shown below and download
 ![](Images/qcow.png)
+We are using .qcow as it is supported by DigitalOcean for custom images and can be easily implemented.
 ## Creating a Droplet running Arch Linux
 1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
 ![](Images/CreateDroplet.png)
@@ -71,9 +72,17 @@ cat ~/.ssh/do-key.pub | xclip -sel clip
 8. Choose 1 droplet for the quantity and give the droplet a hostname.
 
 ## Connecting to your droplet
-
+1. Once the droplet is created, go to the projects section and hover over the IP address of the droplet.
+![](Images/IP.png)
+2. Copy the IP address.
+3. Run the command below with the IP address that you copied from your droplet.
+``` powershell
+ssh -i ~/.ssh/do-key arch@IP-address
+```
+## Conclusion
+Congratulations! You have successfully generated an SSH Key, created an Arch Linux server on DigitalOcean, and connected your server using SSH. You can now start customizing and managing your new server.
 ## References
 
-SSH KEYS: https://www.cloudflare.com/learning/access-management/what-is-ssh/
+**Cloudflare.** (n.d.). What is SSH? Retrieved September 24, 2024, from [https://www.cloudflare.com/learning/access-management/what-is-ssh/](https://www.cloudflare.com/learning/access-management/what-is-ssh/)
 
-SSH Key GITLAB CLass: https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md
+**CIT 2420 Class.** (n.d.). SSH Key. Retrieved from GitLab: [https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md](https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md)
