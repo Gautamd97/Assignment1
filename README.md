@@ -53,24 +53,24 @@ cat ~/.ssh/do-key.pub | xclip -sel clip
 1. Log into your DigitalOcean account
 2. Navigate to Settings > Security > SSH Keys
 3. Click on add SSH Key
-![](Images/SSHKey.png)
+![](Assets/SSHKey.png)
 4. Paste the contents of your public key into the Public Key box and name it. 
-![](Images/SSHKey2%201.png)
+![](Assets/SSHKey2%201.png)
 
 ## Custom Arch Linux image
 1. Download an Arch linux image from [Arch Linux](https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) website.
 2. Go to the latest images folder
-![](Images/imagesArchLinux.png)
+![](Assets/imagesArchLinux.png)
 3. Select the .qcow file shown below and download
-![](Images/qcow.png)
+![](Assets/qcow.png)
 We are using .qcow as it is supported by DigitalOcean for custom images and can be easily implemented.
 ## Creating a Droplet running Arch Linux
 1. Click on the green "Create" dropdown found on the upper right corner on DigitalOcean and click on "Droplet".
-![](Images/CreateDroplet.png)
+![](Assets/CreateDroplet.png)
 2. You will be redirected to a "Create Droplets" page where you must create your droplet.
 3. In this tutorial, we will be choosing the options as described and in the screenshots below.
 4. Select the San Francisco region and SFO3 Datacenter.
-![](Images/Region.png)
+![](Assets/Region.png)
 5. For images, click on custom image, then add image then upload the Arch Linux image that you downloaded earlier in the tutorial.
 6. For this tutorial, we will choose the Basic plan for the droplet type and the cheapest option under the Premium AMD CPU option.
 7. For the authentication method, select SSH Key and choose the key that was created earlier.
@@ -100,10 +100,10 @@ disable_root: true
 2. While creating the droplet, scroll down to the bottom and select "Advanced Options"
 3. Select "Add Initialization Scripts"
 4. Copy the above contents and paste it into the text box that appears after you select "Add Initialization Scripts"
-![](Images/Cloud-Init.png)
+![](Assets/Cloud-Init.png)
 ## Connecting to your droplet
 1. Once the droplet is created, go to the projects section and hover over the IP address of the droplet.
-![](Images/IP.png)
+![](Assets/IP.png)
 2. Copy the IP address.
 3. Run the command below with the IP address that you copied from your droplet.
 ``` powershell
